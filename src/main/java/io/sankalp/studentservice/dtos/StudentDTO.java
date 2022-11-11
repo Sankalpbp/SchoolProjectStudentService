@@ -6,7 +6,7 @@ public class StudentDTO {
     private int rollNumber;
     private int classNumber;
     private AddressDTO address;
-    private int parentsPhoneNumber;
+    private String parentsPhoneNumber;
 
     public String getName() {
         return name;
@@ -40,11 +40,11 @@ public class StudentDTO {
         this.address = address;
     }
 
-    public int getParentsPhoneNumber() {
+    public String getParentsPhoneNumber() {
         return parentsPhoneNumber;
     }
 
-    public void setParentsPhoneNumber(int parentsPhoneNumber) {
+    public void setParentsPhoneNumber(String parentsPhoneNumber) {
         this.parentsPhoneNumber = parentsPhoneNumber;
     }
 }
