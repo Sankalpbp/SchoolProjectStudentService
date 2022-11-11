@@ -1,0 +1,15 @@
+[
+  {
+    "name": "KK",
+    "rollNumber": 1,
+    "classNumber": 2,
+    "address": {
+      "houseNumber": 111,
+      "roadNumber": 2,
+      "colony": "Prashanthi Hills Colony",
+      "pinCode": 500003,
+      "landmark": "Gandikota Apartment Castles"
+    },
+    "parentsPhoneNumber": 9811223344
+  }
+]
