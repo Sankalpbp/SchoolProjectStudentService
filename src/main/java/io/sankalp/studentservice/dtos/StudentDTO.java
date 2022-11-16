@@ -6,6 +6,7 @@ public class StudentDTO {
     private int rollNumber;
     private int classNumber;
     private AddressDTO address;
+    private DepartmentDTO departmentDTO;
     private String parentsPhoneNumber;
 
     public String getName() {
