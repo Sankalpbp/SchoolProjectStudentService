@@ -28,12 +28,12 @@ public class FetchStudentService {
         Set<StudentDTO> students = getStudents().stream ()
                                                      .filter ( student -> student.getName ()
                                                                                  .equals ( name ) )
-                                                     .collect(Collectors.toSet());
-        String departmentName = students.stream()
-                                        .iterator()
-                                        .next()
-                                        .getDepartmentName();
+                                                     .collect (Collectors.toSet());
+        String departmentName = students.stream ()
+                                        .iterator ()
+                                        .next ()
+                                        .getDepartmentName ();
 
-        return Collections.singletonMap( "departmentName", departmentName );
+        return Collections.singletonMap ( "departmentName", departmentName );
     }
 }
