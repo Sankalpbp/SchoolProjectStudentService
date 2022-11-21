@@ -24,16 +24,25 @@ public class FetchStudentService {
         return Arrays.asList( objectMapper.readValue( file, StudentDTO[].class ) );
     }
 
-    public Map<String, String> getDepartmentByStudent(String name ) throws IOException {
-        Set<StudentDTO> students = getStudents().stream ()
-                                                     .filter ( student -> student.getName ()
-                                                                                 .equals ( name ) )
-                                                     .collect (Collectors.toSet());
-        String departmentName = students.stream ()
-                                        .iterator ()
-                                        .next ()
-                                        .getDepartmentName ();
+    public Map<String, String> getDepartmentByStudent( String name ) throws IOException {
+        String departmentName = filterStudentsByName ( name ).stream ()
+                                                             .iterator ()
+                                                             .next ()
+                                                             .getDepartmentName ();
 
         return Collections.singletonMap ( "departmentName", departmentName );
+    }
+
+    private Set<StudentDTO> filterStudentsByName ( String name ) throws IOException {
+        return getStudents ().stream ()
+                             .filter ( student -> student.getName ()
+                                                         .equals ( name ) )
+                             .collect( Collectors.toSet () );
+    }
+
+    public StudentDTO getStudentByStudentName ( String name ) throws IOException {
+        return filterStudentsByName( name ).stream ()
+                                           .iterator()
+                                           .next();
     }
 }

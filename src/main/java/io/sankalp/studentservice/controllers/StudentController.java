@@ -28,8 +28,13 @@ public class StudentController {
     }
 
     @GetMapping ( "/getDepartmentNameByStudent" )
-    public Map<String, String> getDepartmentNameByStudent (@RequestParam String studentName ) throws IOException {
+    public Map<String, String> getDepartmentNameByStudent ( @RequestParam String studentName ) throws IOException {
         return studentService.getDepartmentByStudent ( studentName );
+    }
+
+    @GetMapping ( "getStudentByName" )
+    public StudentDTO getStudentByName ( @RequestParam String studentName ) throws IOException {
+        return studentService.getStudentByStudentName ( studentName );
     }
 
 }
